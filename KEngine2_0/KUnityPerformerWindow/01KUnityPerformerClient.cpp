@@ -1,0 +1,21 @@
+#define _WINSOCKAPI_
+#include <winsock2.h>
+#include <windows.h>
+
+#include <BattleCityInitiator.cpp>
+#include <BattleCityUpdater.cpp>
+#include <BattleScene.cpp>
+#include <Bullet.cpp>
+#include <EnemyManager.cpp>
+#include <EnemyTank.cpp>
+#include <EngineLauncher.cpp>
+#include <Explosion_Effect.cpp>
+#include <IntroScene.cpp>
+#include <OutroScene.cpp>
+#include <PlayerManager.cpp>
+#include <PlayerTank.cpp>
+#include <Score_Effect.cpp>
+#include <Shield_Effect.cpp>
+#include <Tank.cpp>
+#include <Tile.cpp>
+#include <TileManager.cpp>

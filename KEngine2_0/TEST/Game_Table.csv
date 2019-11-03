@@ -1,0 +1,15 @@
+Index,Name,Attack,Defence,Speed
+int,char[256],int,int,int
+인덱스,이름,공격력,방어력,속도
+1,QWE,3,2,213
+2,RRD,41,8,5
+3,BREDA,5,7,6
+4,ARENA,46,6,546
+5,EL,21,43,32
+6,ER,35,6,34
+7,ASD,76,6,6
+8,qwe,6,4,56
+9,ALJCX,132,32,32
+10,AASDF,46,4325,4
+11,LKJO,43,65,65
+12,OIQU,56,5,87

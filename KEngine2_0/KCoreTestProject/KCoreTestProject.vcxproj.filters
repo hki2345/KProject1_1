@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="TestWindow.h" />
+    <ClInclude Include="TestInitiator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TestUpdator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TestReleaser.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Test1Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TestWindow.cpp" />
+    <ClCompile Include="TestInitiator.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TestLauncher.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TestUpdator.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TestReleaser.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Test1Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{31034ea5-e88b-4741-a599-1bcdf83461d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{08506826-b2e2-4cf4-9b12-0cc1138f2f0b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

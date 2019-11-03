@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="KTimeManager.cpp">
+      <Filter>01_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KInputManager.cpp">
+      <Filter>01_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KCore.cpp">
+      <Filter>00_KCore</Filter>
+    </ClCompile>
+    <ClCompile Include="KVector.cpp">
+      <Filter>00_KMath</Filter>
+    </ClCompile>
+    <ClCompile Include="KWindowManager.cpp">
+      <Filter>01_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KWindow.cpp">
+      <Filter>01_Manager\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="KActor.cpp">
+      <Filter>02_Progress</Filter>
+    </ClCompile>
+    <ClCompile Include="KName.cpp">
+      <Filter>02_Progress</Filter>
+    </ClCompile>
+    <ClCompile Include="KSceneManager.cpp">
+      <Filter>03_KScene</Filter>
+    </ClCompile>
+    <ClCompile Include="KScene.cpp">
+      <Filter>03_KScene</Filter>
+    </ClCompile>
+    <ClCompile Include="KOne.cpp">
+      <Filter>03_KScene\KOne</Filter>
+    </ClCompile>
+    <ClCompile Include="KRenderManager.cpp">
+      <Filter>05_Render</Filter>
+    </ClCompile>
+    <ClCompile Include="KBitMap.cpp">
+      <Filter>00_Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="KComponent.cpp">
+      <Filter>04_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="KTransform.cpp">
+      <Filter>04_Component\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KRenderer.cpp">
+      <Filter>05_Render</Filter>
+    </ClCompile>
+    <ClCompile Include="K2DColliderManager.cpp">
+      <Filter>05_Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="K2DCollider.cpp">
+      <Filter>05_Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="KDebugManager.cpp">
+      <Filter>01_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KUIClicker.cpp">
+      <Filter>04_Component\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KBitMapRender.cpp">
+      <Filter>05_Render\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KConsoleRender.cpp">
+      <Filter>05_Render\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KSpriteRender.cpp">
+      <Filter>05_Render\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KTextRender.cpp">
+      <Filter>05_Render\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KSpriteAnimator.cpp">
+      <Filter>05_Render\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="KBitMapAnimator.cpp">
+      <Filter>05_Render\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="KRectCollision.cpp">
+      <Filter>05_Collider\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="KAlphaRender.cpp">
+      <Filter>05_Render\Child</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KTimeManager.h">
+      <Filter>01_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KInputManager.h">
+      <Filter>01_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KCore.h">
+      <Filter>00_KCore</Filter>
+    </ClInclude>
+    <ClInclude Include="KVector.h">
+      <Filter>00_KMath</Filter>
+    </ClInclude>
+    <ClInclude Include="KWindowManager.h">
+      <Filter>01_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KWindow.h">
+      <Filter>01_Manager\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="KActor.h">
+      <Filter>02_Progress</Filter>
+    </ClInclude>
+    <ClInclude Include="KName.h">
+      <Filter>02_Progress</Filter>
+    </ClInclude>
+    <ClInclude Include="KScene.h">
+      <Filter>03_KScene</Filter>
+    </ClInclude>
+    <ClInclude Include="KSceneManager.h">
+      <Filter>03_KScene</Filter>
+    </ClInclude>
+    <ClInclude Include="KOne.h">
+      <Filter>03_KScene\KOne</Filter>
+    </ClInclude>
+    <ClInclude Include="KRenderManager.h">
+      <Filter>05_Render</Filter>
+    </ClInclude>
+    <ClInclude Include="KBitMap.h">
+      <Filter>00_Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="KComponent.h">
+      <Filter>04_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="KTransform.h">
+      <Filter>04_Component\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KRenderer.h">
+      <Filter>05_Render</Filter>
+    </ClInclude>
+    <ClInclude Include="K2DColliderManager.h">
+      <Filter>05_Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="K2DCollider.h">
+      <Filter>05_Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="KDebugManager.h">
+      <Filter>01_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KMath.h">
+      <Filter>00_KMath</Filter>
+    </ClInclude>
+    <ClInclude Include="KUIClicker.h">
+      <Filter>04_Component\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KBitMapRender.h">
+      <Filter>05_Render\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KConsoleRender.h">
+      <Filter>05_Render\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KSpriteRender.h">
+      <Filter>05_Render\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KTextRender.h">
+      <Filter>05_Render\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KSpriteAnimator.h">
+      <Filter>05_Render\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="KBitMapAnimator.h">
+      <Filter>05_Render\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="KRectCollision.h">
+      <Filter>05_Collider\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="PtrOfKWindow.h">
+      <Filter>01_Ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="PtrOfKScene.h">
+      <Filter>01_Ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="PtrOfKOne.h">
+      <Filter>01_Ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="KAlphaRender.h">
+      <Filter>05_Render\Child</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="00_KCore">
+      <UniqueIdentifier>{c1b1ee7a-98b6-4aa2-b0fa-784385a44dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Manager">
+      <UniqueIdentifier>{77dacd86-ddfd-4142-9d10-36ebbbfa7a01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Ptr">
+      <UniqueIdentifier>{a41b1314-4f3a-4797-901b-1ecac505c046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Manager\Window">
+      <UniqueIdentifier>{0e667cba-3677-48c7-a989-c8eb6f6a9fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_Progress">
+      <UniqueIdentifier>{7859dda7-53dc-4c93-bd0d-8a2c67f27925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_KScene">
+      <UniqueIdentifier>{32ad22de-0b4f-4d74-824c-b385aee00c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_Resource">
+      <UniqueIdentifier>{340730ba-363d-43c6-b3e7-a7ea62898349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_KScene\KOne">
+      <UniqueIdentifier>{605d8b8a-cd1a-465d-8511-c2aeaee0c37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Component">
+      <UniqueIdentifier>{fb964d6d-8f9c-446c-880c-2f43d03e7b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Component\Child">
+      <UniqueIdentifier>{70ff25d3-fe0f-4d9b-88a1-c65783057b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Collider">
+      <UniqueIdentifier>{d2254df2-8db4-4b7d-943f-eb1eeb1862ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Collider\Child">
+      <UniqueIdentifier>{accf7f6e-1859-4bea-a2fe-9778d0317384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Render">
+      <UniqueIdentifier>{702d9a27-7071-4d21-bcbd-3e27a97e4e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Render\Child">
+      <UniqueIdentifier>{a4e164df-73b2-42db-85f2-778a0ae03c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Render\Animator">
+      <UniqueIdentifier>{375af6da-6956-4fa7-a0af-ffb934ef5a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_KMath">
+      <UniqueIdentifier>{f5b8e279-41f1-4e92-a5d7-f49e93bdf770}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{5A5DB68C-459F-4A8F-9E80-D7F2FFE2E1F9}</ProjectGuid>
+    <RootNamespace>KCore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;..\lib;..\..\Klib;</LibraryPath>
+    <OutDir>..\lib\</OutDir>
+    <TargetName>$(ProjectName)_$(Configuration)$(PlatformArchitecture)</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\KCommon;..\..\KContainer1_0;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;..\lib;..\..\Klib;</LibraryPath>
+    <OutDir>..\lib\</OutDir>
+    <TargetName>$(ProjectName)_$(Configuration)$(PlatformArchitecture)</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\KCommon;..\..\KContainer1_0;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;..\lib;..\..\Klib;</LibraryPath>
+    <OutDir>..\lib\</OutDir>
+    <TargetName>$(ProjectName)_$(Configuration)$(PlatformArchitecture)</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\KCommon;..\..\KContainer1_0;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;..\lib;..\..\Klib;</LibraryPath>
+    <OutDir>..\lib\</OutDir>
+    <TargetName>$(ProjectName)_$(Configuration)$(PlatformArchitecture)</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\KCommon;..\..\KContainer1_0;</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;$(Platform);%(PreprocessorDefinitions);_WINSOCKAPI_;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;$(Platform);%(PreprocessorDefinitions);_WINSOCKAPI_;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;$(Platform);%(PreprocessorDefinitions);_WINSOCKAPI_;</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;$(Platform);%(PreprocessorDefinitions);_WINSOCKAPI_;</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="K2DColliderManager.cpp" />
+    <ClCompile Include="KActor.cpp" />
+    <ClCompile Include="KAlphaRender.cpp" />
+    <ClCompile Include="KBitMap.cpp" />
+    <ClCompile Include="KBitMapAnimator.cpp" />
+    <ClCompile Include="KBitMapRender.cpp" />
+    <ClCompile Include="K2DCollider.cpp" />
+    <ClCompile Include="KComponent.cpp" />
+    <ClCompile Include="KConsoleRender.cpp" />
+    <ClCompile Include="KCore.cpp" />
+    <ClCompile Include="KDebugManager.cpp" />
+    <ClCompile Include="KInputManager.cpp" />
+    <ClCompile Include="KName.cpp" />
+    <ClCompile Include="KOne.cpp" />
+    <ClCompile Include="KRectCollision.cpp" />
+    <ClCompile Include="KRenderer.cpp" />
+    <ClCompile Include="KRenderManager.cpp" />
+    <ClCompile Include="KScene.cpp" />
+    <ClCompile Include="KSceneManager.cpp" />
+    <ClCompile Include="KSpriteAnimator.cpp" />
+    <ClCompile Include="KSpriteRender.cpp" />
+    <ClCompile Include="KTextRender.cpp" />
+    <ClCompile Include="KTimeManager.cpp" />
+    <ClCompile Include="KTransform.cpp" />
+    <ClCompile Include="KUIClicker.cpp" />
+    <ClCompile Include="KVector.cpp" />
+    <ClCompile Include="KWindow.cpp" />
+    <ClCompile Include="KWindowManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="K2DColliderManager.h" />
+    <ClInclude Include="KActor.h" />
+    <ClInclude Include="KAlphaRender.h" />
+    <ClInclude Include="KBitMap.h" />
+    <ClInclude Include="KBitMapAnimator.h" />
+    <ClInclude Include="KBitMapRender.h" />
+    <ClInclude Include="K2DCollider.h" />
+    <ClInclude Include="KComponent.h" />
+    <ClInclude Include="KConsoleRender.h" />
+    <ClInclude Include="KCore.h" />
+    <ClInclude Include="KDebugManager.h" />
+    <ClInclude Include="KInputManager.h" />
+    <ClInclude Include="KMath.h" />
+    <ClInclude Include="KName.h" />
+    <ClInclude Include="KOne.h" />
+    <ClInclude Include="KRectCollision.h" />
+    <ClInclude Include="KRenderer.h" />
+    <ClInclude Include="KRenderManager.h" />
+    <ClInclude Include="KScene.h" />
+    <ClInclude Include="KSceneManager.h" />
+    <ClInclude Include="KSpriteAnimator.h" />
+    <ClInclude Include="KSpriteRender.h" />
+    <ClInclude Include="KTextRender.h" />
+    <ClInclude Include="KTimeManager.h" />
+    <ClInclude Include="KTransform.h" />
+    <ClInclude Include="KUIClicker.h" />
+    <ClInclude Include="KVector.h" />
+    <ClInclude Include="KWindow.h" />
+    <ClInclude Include="KWindowManager.h" />
+    <ClInclude Include="PtrOfKOne.h" />
+    <ClInclude Include="PtrOfKScene.h" />
+    <ClInclude Include="PtrOfKWindow.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
