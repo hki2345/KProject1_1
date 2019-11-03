@@ -14,7 +14,7 @@
 
 
 
-#include "InGameScene.h"
+#include "CircusScene.h"
 #include "IntroScene.h"
 
 
@@ -26,7 +26,7 @@ void GameManager::init()
 	KResourceManager<KBitMap>::instance()->load_forder(L"Circus");
 	KResourceManager<KBitMap>::instance()->add_font(L"Circus\\DungGeunMo.ttf");
 
-	GameScene = new BnBScene();
+	GameScene = new CircusScene();
 	InScene = new IntroScene();
 
 	KSceneManager::instance()->create_scene(GameScene, L"Game");

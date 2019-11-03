@@ -1,187 +1,207 @@
-﻿// WINDOWTEST.cpp : 응용 프로그램에 대한 진입점을 정의합니다.
-//
+﻿#pragma comment(linker, "/manifestdependency:\"type='win32' \
+    name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
+    processorArchitecture='*' \
+    publicKeyToken='6595b64144ccf1df' language='*'\"")
 
-#include "header.h"
-#include "WINDOWTEST.h"
+#pragma comment(lib, "comctl32.lib")
 
-#define MAX_LOADSTRING 100
+#include <windows.h>
+#include <commctrl.h>
 
-// 전역 변수:
-HINSTANCE hInst;                                // 현재 인스턴스입니다.
-WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
-WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
+ATOM RegisterWndClass(HINSTANCE hInst);
 
-// 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance);
-BOOL                InitInstance(HINSTANCE, int);
-LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+BOOL CreateMainWnd(HINSTANCE hInstance, int nCmdShow);
 
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+LRESULT CALLBACK MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+HINSTANCE hInst;
+
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hInstPrev, LPWSTR lpszCmdLine,
+	int nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+	INITCOMMONCONTROLSEX icex = { 0 };
+	icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
+	icex.dwICC = ICC_LISTVIEW_CLASSES | ICC_USEREX_CLASSES | ICC_BAR_CLASSES |
+		ICC_COOL_CLASSES | ICC_TAB_CLASSES | ICC_WIN95_CLASSES |
+		ICC_PROGRESS_CLASS | ICC_PAGESCROLLER_CLASS;
 
-    // TODO: 여기에 코드를 입력합니다.
+	InitCommonControlsEx(&icex);
 
-    // 전역 문자열을 초기화합니다.
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_WINDOWTEST, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
+	MSG msg;
 
-    // 응용 프로그램 초기화를 수행합니다:
-    if (!InitInstance (hInstance, nCmdShow))
-    {
-        return FALSE;
-    }
+	hInst = hInstance;
 
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWTEST));
+	if (!RegisterWndClass(hInstance))
+		return NULL;
 
-    MSG msg;
+	if (!CreateMainWnd(hInstance, nCmdShow))
+		return NULL;
 
+	while (GetMessage(&msg, NULL, NULL, NULL))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+	return msg.wParam;
+};
 
-    // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
+ATOM RegisterWndClass(HINSTANCE hInstance)
+{
 
-    return (int) msg.wParam;
+	WNDCLASS wndClass = { 0 };
+	wndClass.style = CS_DBLCLKS;
+	wndClass.lpfnWndProc = MainWndProc;
+	wndClass.hInstance = hInstance;
+	wndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = GetSysColorBrush(COLOR_BTNFACE);
+	wndClass.lpszMenuName = NULL;
+	wndClass.lpszClassName = L"MainClass";
+	wndClass.cbClsExtra = 0;
+	wndClass.cbWndExtra = 0;
+
+	return RegisterClass(&wndClass);
 }
 
-
-
-//
-//  함수: MyRegisterClass()
-//
-//  용도: 창 클래스를 등록합니다.
-//
-ATOM MyRegisterClass(HINSTANCE hInstance)
+BOOL CreateMainWnd(HINSTANCE hInstance, int nCmdShow)
 {
-    WNDCLASSEXW wcex;
+	HWND hWnd = CreateWindow(L"MainClass", L"Buttons sample",
+		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
+		GetSystemMetrics(SM_CXSCREEN) / 2 - 115,
+		GetSystemMetrics(SM_CYSCREEN) / 2 - 50,
+		230, 100, NULL, NULL, hInstance, NULL);
 
-    wcex.cbSize = sizeof(WNDCLASSEX);
+	if (!hWnd)
+		return FALSE;
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WINDOWTEST));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WINDOWTEST);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+	ShowWindow(hWnd, nCmdShow);
+	UpdateWindow(hWnd);
 
-    return RegisterClassExW(&wcex);
+	return TRUE;
 }
 
-//
-//   함수: InitInstance(HINSTANCE, int)
-//
-//   용도: 인스턴스 핸들을 저장하고 주 창을 만듭니다.
-//
-//   주석:
-//
-//        이 함수를 통해 인스턴스 핸들을 전역 변수에 저장하고
-//        주 프로그램 창을 만든 다음 표시합니다.
-//
-#define ID_EDIT 501
-BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+HBITMAP hBitmap = NULL;
+
+LRESULT CALLBACK MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-   hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
+	switch (msg)
+	{
+	case WM_CREATE:
+	{
+		// Owner draw button
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+		CreateWindow(L"BUTTON", L"", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON |
+			BS_OWNERDRAW, 10, 10, 60, 30, hWnd,
+			(HMENU)10001, hInst, NULL);
 
-   HWND hEdit = CreateWindow(
-	   TEXT("edit"), NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOVSCROLL | ES_MULTILINE,
-	   280, 160, 200, 80, hWnd, NULL, hInst, NULL);
+		// Custom draw button
 
+		CreateWindow(L"BUTTON", L"", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 80,
+			10, 60, 30, hWnd, (HMENU)10002, hInst, NULL);
 
-   if (!hWnd)
-   {
-      return FALSE;
-   }
+		// Bitmap button
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+		HWND hBitmapButton = CreateWindow(L"BUTTON", L"", WS_CHILD | WS_VISIBLE
+			| BS_PUSHBUTTON | BS_BITMAP,
+			150, 10, 60, 30, hWnd,
+			(HMENU)10003, hInst, NULL);
 
-   return TRUE;
-}
+		HDC hDC = GetDC(hWnd);
 
-//
-//  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
-//
-//  용도: 주 창의 메시지를 처리합니다.
-//
-//  WM_COMMAND  - 응용 프로그램 메뉴를 처리합니다.
-//  WM_PAINT    - 주 창을 그립니다.
-//  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
-//
-//
-LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
-}
+		HDC hMemDC = CreateCompatibleDC(hDC);
 
-// 정보 대화 상자의 메시지 처리기입니다.
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
+		hBitmap = CreateCompatibleBitmap(hDC, 55, 25);
 
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
+		SelectObject(hMemDC, hBitmap);
+
+		SetDCBrushColor(hMemDC, RGB(0, 0, 255));
+
+		RECT r = { 0 };
+		r.left = 0;
+		r.right = 55;
+		r.top = 0;
+		r.bottom = 25;
+
+		FillRect(hMemDC, &r, (HBRUSH)GetStockObject(DC_BRUSH));
+
+		DeleteDC(hMemDC);
+		ReleaseDC(hWnd, hDC);
+
+		SendMessage(hBitmapButton, BM_SETIMAGE, (WPARAM)IMAGE_BITMAP,
+			(LPARAM)hBitmap);
+
+		return 0;
+	}
+
+	case WM_COMMAND:
+		switch (LOWORD(wParam))
+		{
+		case 10001:
+			MessageBox(hWnd, L"Owner draw button clicked", L"Message", NULL);
+			return 0;
+		case 10002:
+			MessageBox(hWnd, L"Custom draw button clicked", L"Message", NULL);
+			return 0;
+		case 10003:
+			MessageBox(hWnd, L"Bitmap button clicked", L"Message", NULL);
+			return 0;
+		}
+		break;
+
+		// Owner draw button
+
+	case WM_DRAWITEM:
+		if (wParam == 10001)
+		{
+			LPDRAWITEMSTRUCT lpDIS = (LPDRAWITEMSTRUCT)lParam;
+
+			SetDCBrushColor(lpDIS->hDC, RGB(255, 0, 0));
+
+			SelectObject(lpDIS->hDC, GetStockObject(DC_BRUSH));
+
+			RoundRect(lpDIS->hDC, lpDIS->rcItem.left, lpDIS->rcItem.top,
+				lpDIS->rcItem.right, lpDIS->rcItem.bottom, 5, 5);
+
+			return TRUE;
+		}
+		break;
+
+		// Custom draw button
+
+	case WM_NOTIFY:
+		switch (((LPNMHDR)lParam)->code)
+		{
+		case NM_CUSTOMDRAW:
+			if (((LPNMHDR)lParam)->idFrom == 10002)
+			{
+				LPNMCUSTOMDRAW lpnmCD = (LPNMCUSTOMDRAW)lParam;
+
+				switch (lpnmCD->dwDrawStage)
+				{
+				case CDDS_PREPAINT:
+
+					SetDCBrushColor(lpnmCD->hdc, RGB(0, 255, 0));
+					SetDCPenColor(lpnmCD->hdc, RGB(0, 255, 0));
+					SelectObject(lpnmCD->hdc, GetStockObject(DC_BRUSH));
+					SelectObject(lpnmCD->hdc, GetStockObject(DC_PEN));
+
+					RoundRect(lpnmCD->hdc, lpnmCD->rc.left + 3,
+						lpnmCD->rc.top + 3,
+						lpnmCD->rc.right - 3,
+						lpnmCD->rc.bottom - 3, 5, 5);
+
+					return TRUE;
+				}
+			}
+			break;
+		}
+		break;
+
+	case WM_DESTROY:
+		if (hBitmap != NULL)
+			DeleteObject((HBITMAP)hBitmap);
+		PostQuitMessage(0);
+		return 0;
+	}
+	return DefWindowProc(hWnd, msg, wParam, lParam);
 }

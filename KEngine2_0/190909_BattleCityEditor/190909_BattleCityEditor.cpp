@@ -22,7 +22,14 @@
 #include <deque>
 
 #include <CommDlg.h>
+#include <commctrl.h>
 
+
+#pragma comment(lib, "comctl32.lib")
+#pragma comment(linker, "/manifestdependency:\"type='win32' \
+    name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
+    processorArchitecture='*' \
+    publicKeyToken='6595b64144ccf1df' language='*'\"")
 
 #if _DEBUG
 #if Win32
@@ -117,6 +124,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	// _CrtSetBreakAlloc(3446);
 
+	INITCOMMONCONTROLSEX icex = { 0 };
+	icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
+	icex.dwICC = ICC_LISTVIEW_CLASSES | ICC_USEREX_CLASSES | ICC_BAR_CLASSES |
+		ICC_COOL_CLASSES | ICC_TAB_CLASSES | ICC_WIN95_CLASSES |
+		ICC_PROGRESS_CLASS | ICC_PAGESCROLLER_CLASS;
+
+	InitCommonControlsEx(&icex);
 
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
@@ -245,11 +259,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 
 		CreateWindow(TEXT("button"), TEXT("Load"), WS_CHILD | WS_VISIBLE |
-			BS_PUSHBUTTON, MaxX - 240, MaxY, 100, 25, hWnd, (HMENU)0, hInst, NULL);
+			BS_PUSHBUTTON, MaxX - 240, MaxY, 100, 25, hWnd, (HMENU)10000, hInst, NULL);
 		CreateWindow(TEXT("button"), TEXT("Save"), WS_CHILD | WS_VISIBLE |
-			BS_PUSHBUTTON, MaxX - 120, MaxY, 100, 25, hWnd, (HMENU)1, hInst, NULL);
+			BS_PUSHBUTTON, MaxX - 120, MaxY, 100, 25, hWnd, (HMENU)10001, hInst, NULL);
 		CreateWindow(TEXT("button"), TEXT("Reset"), WS_CHILD | WS_VISIBLE |
-			BS_PUSHBUTTON, MaxX - 0, MaxY, 100, 25, hWnd, (HMENU)2, hInst, NULL);
+			BS_PUSHBUTTON, MaxX - 0, MaxY, 100, 25, hWnd, (HMENU)10002, hInst, NULL);
 
 		int MaxX2 = 600;
 		int MaxX3 = 100;
@@ -292,7 +306,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_COMMAND:
 		switch (LOWORD(wParam))
 		{
-		case 0:
+		case 10000:
 		{
 			OPENFILENAME NewOpen;
 			memset(&NewOpen, 0, sizeof(OPENFILENAME));
@@ -318,7 +332,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 			break;
 		}
-		case 1:
+		case 10001:
 		{
 			OPENFILENAME NewOpen;
 			memset(&NewOpen, 0, sizeof(OPENFILENAME));
@@ -342,7 +356,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			}
 		}
 			break;
-		case 2:
+		case 10002:
 		{
 			reset_tile();
 		}
@@ -362,7 +376,34 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			EndPaint(hWnd, &ps);
         }
         break;
+	case WM_NOTIFY:
+		switch (((LPNMHDR)lParam)->code)
+		{
+		case NM_CUSTOMDRAW:
+			if (((LPNMHDR)lParam)->idFrom == 10001)
+			{
+				LPNMCUSTOMDRAW lpnmCD = (LPNMCUSTOMDRAW)lParam;
 
+				switch (lpnmCD->dwDrawStage)
+				{
+				case CDDS_PREPAINT:
+
+					SetDCBrushColor(lpnmCD->hdc, RGB(0, 255, 0));
+					SetDCPenColor(lpnmCD->hdc, RGB(0, 255, 0));
+					SelectObject(lpnmCD->hdc, GetStockObject(DC_BRUSH));
+					SelectObject(lpnmCD->hdc, GetStockObject(DC_PEN));
+
+					RoundRect(lpnmCD->hdc, lpnmCD->rc.left + 3,
+						lpnmCD->rc.top + 3,
+						lpnmCD->rc.right - 3,
+						lpnmCD->rc.bottom - 3, 5, 5);
+
+					return TRUE;
+				}
+			}
+			break;
+		}
+		break;
 	case WM_TIMER:
 	{
 		reset_render();

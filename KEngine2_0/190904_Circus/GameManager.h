@@ -2,13 +2,13 @@
 #include <KCommon.h>
 
 
-class BnBScene;
+class CircusScene;
 class IntroScene;
 class GameManager : public KSingleton<GameManager>
 {
 
 private:
-	BnBScene* GameScene;
+	CircusScene* GameScene;
 	IntroScene* InScene;
 
 public:
