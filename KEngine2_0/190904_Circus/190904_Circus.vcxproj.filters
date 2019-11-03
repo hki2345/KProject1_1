@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="KEngineUpdater.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="KEngineinitiator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="KEngineReleaser.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ComPlayer.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BackDeco.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstcle.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CircusObject.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Miter.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="IntroScene.h">
+      <Filter>Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstacleManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CircusScene.h">
+      <Filter>InGame\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KEngineinitiator.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="KEngineLauncher.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="KEngineReleaser.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="KEngineUpdater.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ComPlayer.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BackDeco.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstcle.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="CircusObject.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Miter.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstacleManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CircusScene.cpp">
+      <Filter>InGame\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{57d13651-090c-4f5f-baf3-4d041d96584f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame">
+      <UniqueIdentifier>{5fe67e82-b018-498b-b443-dac9055f9c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Component">
+      <UniqueIdentifier>{59113b12-159c-4d0a-b17a-7875eed07c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Scene">
+      <UniqueIdentifier>{0cac9114-a520-4b69-a300-3f4fb8ae5ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Intro">
+      <UniqueIdentifier>{65917a50-3557-4bd5-b9bd-afe8966d24b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Manager">
+      <UniqueIdentifier>{6839f535-d12f-40b1-abb7-9fc1514cd361}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

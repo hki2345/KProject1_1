@@ -1,0 +1,213 @@
+#pragma once
+#include <KMacro.h>
+#pragma pack(1)
+
+
+#include <Windows.h>
+
+
+#define PLAYMAXCOUNT (8)
+#define RENDERKEY (10)
+#define ROOMMAXUSER (12)
+#define ROOMCOUNT (6)
+#define USERCOUNT (25)
+
+#define STARTXPOS 20
+#define STARTYPOS 41
+
+#define TILEXSIZE 15
+#define TILEYSIZE 13
+
+#define BNBFONT  L"12롯데마트행복Bold"
+#define LOBBYROOMCOLOR RGB(255, 255, 255)
+#define LOBBYCHATCOLOR RGB(209, 237, 255)
+
+
+#define BNBREDCOLOR RGB(255, 0, 0)
+#define BNBBLUECOLOR RGB(209, 237, 255)
+#define BNBGRAYCOLOR RGB(116, 116, 116)
+#define BNBORANGECOLOR RGB(255, 94, 0)
+#define BNBYELLOWCOLOR RGB(255, 228, 0)
+#define BNBCYANCOLOR RGB(0, 216, 255)
+#define BNBPUPPLECOLOR RGB(95, 0, 255)
+#define BNBGREENCOLOR RGB(29, 219, 22)
+
+
+
+enum BNBTILE_TYPE
+{
+	BNBT_NONE = 0,
+	BNBT_BOX = 1,
+	BNBT_BLOCK1,
+	BNBT_BLOCK2,
+	BNBT_BLOCK3,
+	BNBT_ITEM1,
+	BNBT_ITEM2,
+	BNBT_ITEM3,
+
+	BNBT_METALOBS,
+
+	BNBT_FLAGOBS1,
+	BNBT_FLAGOBS2,
+	BNBT_FLAGOBS3,
+	BNBT_FLAGOBS4,
+	BNBT_FLAGOBS5,
+	BNBT_FLAGOBS6,
+
+	BNBT_BALLOON,
+	BNBT_BOMBCENTER,
+
+	BNBT_BOMBUEX,
+	BNBT_BOMBDEX,
+	BNBT_BOMBLEX,
+	BNBT_BOMBREX,
+
+	BNBT_BOMBU,
+	BNBT_BOMBD,
+	BNBT_BOMBL,
+	BNBT_BOMBR,
+};
+
+enum PACKET_INDEX
+{
+	PACKET_INDEX_LOGIN_RET = 1,
+	PACKET_INDEX_USER_DATA,
+	PACKET_INDEX_SEND_LOBBYDATA,
+	PACKET_INDEX_SEND_ROOMDATA,
+	PACKET_INDEX_SEND_ROOMINDATA,
+	PACKET_INDEX_SEND_ROOMUSERDATA,
+	PACKET_INDEX_SEND_ROOMOUTDATA,
+	PACKET_INDEX_SEND_GAMESTARTDATA,
+	PACKET_INDEX_SEND_GAME_CHARDATA,
+	PACKET_INDEX_SEND_GAME_OVER,
+	PACKET_INDEX_SEND_CHATDATA,
+};
+
+struct PACKET_HEADER
+{
+	WORD wIndex;
+	WORD wLen;
+};
+
+struct USER_DATA
+{
+	char szPlayerNAME[KNAMING];
+	BYTE iIdx;
+	bool IsReady;
+};
+
+struct ROOM_DATA
+{
+	SOCKET iPlayerID;
+	WORD iRoomID;
+	WORD iPlayerIdx;
+};
+
+struct GAME_CHARDATA
+{
+	bool IsUpdate;
+
+	char szPlayerNAME[KNAMING];
+	bool IsDie;
+
+	BYTE Dir;
+	float fX;									
+	float fY;							//Left	0
+										//Right 1
+	BYTE UserIdx;						//Up	2
+	BYTE BombX;							//Down	3
+	BYTE BombY;							
+};							
+
+
+
+struct CHAT_DATA
+{
+	SOCKET iPlayerID;
+	char szPlayerNAME[KNAMING];
+	char sChat[KPATHBUFSIZE];
+};
+
+
+
+
+struct PACKET_LOGIN_RET
+{
+	PACKET_HEADER header;
+	SOCKET iPlayerId;
+	char szPlayerNAME[KNAMING];
+	char szPlayerPASSWARD[KHASH];
+};
+
+struct PACKET_USER_DATA
+{
+	PACKET_HEADER header;
+	WORD InRoomID;
+	WORD wCount;
+	USER_DATA data[USERCOUNT];
+};
+
+struct PACKET_SEND_LOBBYDATA
+{
+	PACKET_HEADER header;
+	WORD wCount;
+	ROOM_DATA data[8];
+	WORD wUserCount;
+	USER_DATA UserData[USERCOUNT];
+};
+
+
+struct PACKET_SEND_ROOMDATA
+{
+	PACKET_HEADER header;
+	ROOM_DATA data;
+};
+struct PACKET_SEND_ROOMINDATA
+{
+	PACKET_HEADER header;
+	WORD InRoomID;
+};
+
+struct PACKET_SEND_ROOMUSERDATA
+{
+	PACKET_HEADER header;
+	WORD InRoomID;
+	WORD wUserCount;
+	USER_DATA UserData[USERCOUNT];
+};
+
+struct PACKET_SEND_ROOMOUTDATA
+{
+	PACKET_HEADER header;
+	USER_DATA UserData;
+};
+
+struct PACKET_SEND_STARTDATA
+{
+	PACKET_HEADER header;
+	bool IsStart;
+	BYTE PlayerCount;
+	BYTE PlayerData[PLAYMAXCOUNT];
+};
+
+struct PACKET_SEND_GAME_CHARDATA
+{
+	PACKET_HEADER header;
+	BYTE UserCnt;
+	GAME_CHARDATA data[PLAYMAXCOUNT];
+};
+
+struct PACKET_SEND_CHATDATA
+{
+	PACKET_HEADER header;
+	CHAT_DATA data;
+};
+
+struct PACKET_SEND_GAME_OVER
+{
+	PACKET_HEADER header;
+	GAME_CHARDATA data;
+};
+
+
+#pragma pack()

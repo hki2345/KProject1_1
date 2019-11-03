@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="InGame">
+      <UniqueIdentifier>{184ce63b-1dba-41b6-9b88-952ab711eb0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Intro">
+      <UniqueIdentifier>{029ab016-d289-4fc1-adc5-d9d9edf81ad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{aec814ad-a0e0-44ac-87e9-d511d00e5e0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Component">
+      <UniqueIdentifier>{280be81f-ed9e-414e-b6a8-1c884431a96a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Manager">
+      <UniqueIdentifier>{e81a8882-0d25-4a05-8ba4-490052c10441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Component\Effect">
+      <UniqueIdentifier>{54b6df86-135c-495c-8027-20a51bf242b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Outro">
+      <UniqueIdentifier>{fb57130b-fa6c-41a3-aafb-26cbf219615f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EngineLauncher.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleCityInitiator.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTank.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="TileManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleCityUpdater.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion_Effect.cpp">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield_Effect.cpp">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>InGame\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="OutroScene.cpp">
+      <Filter>Outro</Filter>
+    </ClCompile>
+    <ClCompile Include="Score_Effect.cpp">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyTank.cpp">
+      <Filter>InGame\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleScene.cpp">
+      <Filter>InGame</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BattleCityInitiator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTank.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="TileManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleCityUpdater.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion_Effect.h">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield_Effect.h">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>InGame\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="OutroScene.h">
+      <Filter>Outro</Filter>
+    </ClInclude>
+    <ClInclude Include="Score_Effect.h">
+      <Filter>InGame\Component\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyTank.h">
+      <Filter>InGame\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleScene.h">
+      <Filter>InGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
