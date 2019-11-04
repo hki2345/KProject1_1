@@ -4,11 +4,35 @@
 #include "KMacro.h"
 
 
+
+
+#include <Fmod/fmod.hpp>
+#include <Fmod/common.h>
+
+
 bool KWindowManager::init(
 	_In_ HINSTANCE _hInstance,
 	_In_ LPWSTR    _lpCmdLine,
 	_In_ int       _nCmdShow)
 {
+	FMOD::System* system;
+	FMOD_RESULT       result;
+	unsigned int      version;
+	void* extradriverdata = 0;
+	FMOD::Channel* channel = 0;
+
+
+	result = FMOD::System_Create(&system);
+	result = system->getVersion(&version);
+	result = system->init(32, FMOD_INIT_NORMAL, extradriverdata);
+
+	FMOD::Sound* sound1 = nullptr;
+	result = system->createSound("drumloop.wav", FMOD_DEFAULT, nullptr, &sound1);
+	result = system->playSound(sound1, 0, false, &channel);
+
+
+
+
 	hInst = _hInstance;
 	WCmdLine = _lpCmdLine;
 	iCmdShow = _nCmdShow;

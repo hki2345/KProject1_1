@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST", "TEST\TEST.vcxproj", "{D0481C8D-589E-4A58-B416-15ED66722CE6}"
 EndProject
@@ -15,13 +15,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "190904_Circus", "190904_Circus\190904_Circus.vcxproj", "{58E05D67-EF58-4D94-8A31-D26B87AE4FEE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB} = {96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB}
-		{1131DE89-07A4-4F81-977C-D545A37D2162} = {1131DE89-07A4-4F81-977C-D545A37D2162}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "190909_BattleCityEditor", "190909_BattleCityEditor\190909_BattleCityEditor.vcxproj", "{8203429B-CC82-4835-B1DE-E441FC88F6EF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB} = {96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB}
-		{1131DE89-07A4-4F81-977C-D545A37D2162} = {1131DE89-07A4-4F81-977C-D545A37D2162}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "190909_BattleContainer", "190909_BattleContainer\190909_BattleContainer.vcxproj", "{63D49820-8F35-466B-BFFA-23233E324874}"

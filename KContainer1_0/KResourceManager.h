@@ -90,7 +90,11 @@ public:
 		NewRes->sName = _Name;
 		NewRes->set_ktypeinfo<ResT>();
 
-		if (0 == strcmp("class KBitMap", NewRes->ktypename().c_str())) // -> 클래스명으로 확장자 결정
+		if (0 == strcmp("class KSound", NewRes->ktypename().c_str())) // -> 클래스명으로 확장자 결정
+		{
+			NewRes->sExtension = L".wav";
+		}
+		else if (0 == strcmp("class KBitMap", NewRes->ktypename().c_str())) // -> 클래스명으로 확장자 결정
 		{
 			NewRes->sExtension = L".bmp";
 		}
@@ -144,7 +148,12 @@ public:
 	{
 		std::wstring Extension;
 		const char* ComTmp = typeid(ResT).name(); // -> 클래스명 판독코드
-		if (0 == strcmp("class KBitMap", ComTmp)) // -> 클래스명으로 확장자 결정
+
+		if (0 == strcmp("class KSound", ComTmp)) // -> 클래스명으로 확장자 결정
+		{
+			Extension = L".wav";
+		}
+		else if (0 == strcmp("class KBitMap", ComTmp)) // -> 클래스명으로 확장자 결정
 		{
 			Extension = L".bmp";
 		}

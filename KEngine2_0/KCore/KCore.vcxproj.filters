@@ -85,6 +85,15 @@
     <ClCompile Include="KAlphaRender.cpp">
       <Filter>05_Render\Child</Filter>
     </ClCompile>
+    <ClCompile Include="KSound.cpp">
+      <Filter>00_Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="KSoundManager.cpp">
+      <Filter>05_Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="KSoundPlayer.cpp">
+      <Filter>05_Sound\Child</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KTimeManager.h">
@@ -183,6 +192,15 @@
     <ClInclude Include="KAlphaRender.h">
       <Filter>05_Render\Child</Filter>
     </ClInclude>
+    <ClInclude Include="KSound.h">
+      <Filter>00_Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="KSoundManager.h">
+      <Filter>05_Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="KSoundPlayer.h">
+      <Filter>05_Sound\Child</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00_KCore">
@@ -232,6 +250,12 @@
     </Filter>
     <Filter Include="00_KMath">
       <UniqueIdentifier>{f5b8e279-41f1-4e92-a5d7-f49e93bdf770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Sound">
+      <UniqueIdentifier>{1ba216d8-711e-41b3-9509-449649f42428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Sound\Child">
+      <UniqueIdentifier>{5001b439-6780-46eb-8cdd-138c76a52d41}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

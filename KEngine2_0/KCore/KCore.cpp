@@ -12,8 +12,10 @@
 #include "KSceneManager.h"
 #include "KTimeManager.h"
 #include "KDebugManager.h"
+#include "KSoundManager.h"
 
 #include "KBitMap.h"
+#include "KSound.h"
 
 
 #if _DEBUG
@@ -32,15 +34,25 @@
 #endif
 
 
+#if Win32
+#pragma comment(lib, "fmod_vc_x86")
+#elif x64
+#pragma comment(lib, "fmod_vc_x64")
+#endif
+
+
+
 void KCore::init()
 {
 	looping = true;
 	KResourceManager<KBitMap>::instance()->init();
+	KResourceManager<KSound>::instance()->init();
 
 	KSceneManager::instance()->init();
 	KPathManager::instance()->init();
 	KTimeManager::instance()->init();
 	KDebugManager::instance()->init();
+	KSoundManager::instance()->init();
 }
 
 void KCore::init(
@@ -50,6 +62,7 @@ void KCore::init(
 {
 	looping = true;
 	KResourceManager<KBitMap>::instance()->init();
+	KResourceManager<KSound>::instance()->init();
 	KFileStream::instance();
 
 	KWindowManager::instance()->init(_hInstance, _lpCmdLine, _nCmdShow);
@@ -59,12 +72,14 @@ void KCore::init(
 	KWindowManager::instance()->create_window(L"Main");
 	KWindowManager::instance()->init();
 	KDebugManager::instance()->init();
+	KSoundManager::instance()->init();
 }
 
 void KCore::init(KWindow* _Window)
 {
 	looping = true;
 	KResourceManager<KBitMap>::instance()->init();
+	KResourceManager<KSound>::instance()->init();
 	KFileStream::instance();
 
 	KWindowManager::instance()->init(_Window);
@@ -73,6 +88,7 @@ void KCore::init(KWindow* _Window)
 	KTimeManager::instance()->init();
 	KWindowManager::instance()->init();
 	KDebugManager::instance()->init();
+	KSoundManager::instance()->init();
 }
 
 
@@ -80,6 +96,7 @@ void KCore::init(HWND _hWnd, const KSize2& _Size /*= KSize2::Zero*/)
 {
 	looping = true;
 	KResourceManager<KBitMap>::instance()->init();
+	KResourceManager<KSound>::instance()->init();
 	KFileStream::instance();
 
 	KPathManager::instance()->init();
@@ -87,6 +104,7 @@ void KCore::init(HWND _hWnd, const KSize2& _Size /*= KSize2::Zero*/)
 	KWindowManager::instance()->create_window(_hWnd, _Size);
 	KWindowManager::instance()->init();
 	KDebugManager::instance()->init();
+	KSoundManager::instance()->init();
 }
 
 void KCore::loop()
@@ -125,6 +143,7 @@ void KCore::progress()
 void KCore::release()
 {
 	KResourceManager<KBitMap>::instance()->release();
+	KResourceManager<KSound>::instance()->release();
 
 	KDebugManager::instance()->release();
 	KPathManager::instance()->release();
@@ -132,5 +151,6 @@ void KCore::release()
 	KInputManager::instance()->release();
 	KWindowManager::instance()->release();
 	KFileStream::instance()->release();
+	KSoundManager::instance()->release();
 	RELEASE_PTR(KSingleton::instance()->MyPtr);
 }

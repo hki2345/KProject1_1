@@ -169,6 +169,9 @@
     <ClCompile Include="KRenderManager.cpp" />
     <ClCompile Include="KScene.cpp" />
     <ClCompile Include="KSceneManager.cpp" />
+    <ClCompile Include="KSound.cpp" />
+    <ClCompile Include="KSoundManager.cpp" />
+    <ClCompile Include="KSoundPlayer.cpp" />
     <ClCompile Include="KSpriteAnimator.cpp" />
     <ClCompile Include="KSpriteRender.cpp" />
     <ClCompile Include="KTextRender.cpp" />
@@ -200,6 +203,9 @@
     <ClInclude Include="KRenderManager.h" />
     <ClInclude Include="KScene.h" />
     <ClInclude Include="KSceneManager.h" />
+    <ClInclude Include="KSound.h" />
+    <ClInclude Include="KSoundManager.h" />
+    <ClInclude Include="KSoundPlayer.h" />
     <ClInclude Include="KSpriteAnimator.h" />
     <ClInclude Include="KSpriteRender.h" />
     <ClInclude Include="KTextRender.h" />

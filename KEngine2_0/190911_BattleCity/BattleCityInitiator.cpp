@@ -7,10 +7,15 @@
 #include <KTimeManager.h>
 #include <KDebugManager.h>
 #include <KBitMap.h>
+#include <KSound.h>
+#include <KSoundPlayer.h>
+
 
 #include "BattleScene.h"
 #include "IntroScene.h"
 #include "OutroScene.h"
+
+
 
 
 BattleCityInitiator::BattleCityInitiator()
@@ -25,11 +30,12 @@ BattleCityInitiator::~BattleCityInitiator()
 
 bool BattleCityInitiator::init()
 {
-	srand(GetTickCount());
+	srand(GetTickCount64());
 
-	KResourceManager<KBitMap>::instance()->init();
 	KResourceManager<KBitMap>::instance()->load_forder(L"BattleCity");
+	KResourceManager<KSound>::instance()->load_forder(L"BattleCity");
 	KResourceManager<KBitMap>::instance()->add_font(L"BattleCity\\DungGeunMo.ttf");
+
 
 	IntroScene*  NewIntroScene = new IntroScene();
 	BattleScene*  NewGameScene = new BattleScene();
@@ -39,5 +45,12 @@ bool BattleCityInitiator::init()
 	KSceneManager::instance()->create_scene(NewGameScene, L"Game");
 	KSceneManager::instance()->create_scene(NewOutroScene, L"Outro");
 	KSceneManager::instance()->change_scene(L"Intro");
+
+
+	KOne* TOne = NewIntroScene->create_kone(L"asdf");
+	KSoundPlayer* TSound = TOne->add_component<KSoundPlayer>();
+	TSound->set_sound(L"BattleCity\\drumloop.wav");
+	TSound->play();
+
 	return true;
 }
