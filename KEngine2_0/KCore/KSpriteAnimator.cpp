@@ -98,7 +98,7 @@ void KSpriteAnimator::update()
 }
 void KSpriteAnimator::render()
 {
-	// pSprite->render();
+	// pSprite->render_api();
 }
 
 void KSpriteAnimator::render(HDC _Hdc)

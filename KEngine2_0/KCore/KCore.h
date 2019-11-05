@@ -20,6 +20,9 @@ public:
 		virtual void update() {};
 	};
 
+public:
+	bool dxmode = false;
+
 private:
 	KCore::KCoreUpdater* pUpdater = nullptr;
 	bool looping = false;
@@ -125,7 +128,8 @@ public:
 
 
 private:
-	void progress();
+	void progress_api();
+	void progress_dx();
 };
 
 

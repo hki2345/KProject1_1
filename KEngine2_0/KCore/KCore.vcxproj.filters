@@ -34,9 +34,6 @@
     <ClCompile Include="KOne.cpp">
       <Filter>03_KScene\KOne</Filter>
     </ClCompile>
-    <ClCompile Include="KRenderManager.cpp">
-      <Filter>05_Render</Filter>
-    </ClCompile>
     <ClCompile Include="KBitMap.cpp">
       <Filter>00_Resource</Filter>
     </ClCompile>
@@ -94,6 +91,9 @@
     <ClCompile Include="KSoundPlayer.cpp">
       <Filter>05_Sound\Child</Filter>
     </ClCompile>
+    <ClCompile Include="KAPIRenderManager.cpp">
+      <Filter>05_Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KTimeManager.h">
@@ -128,9 +128,6 @@
     </ClInclude>
     <ClInclude Include="KOne.h">
       <Filter>03_KScene\KOne</Filter>
-    </ClInclude>
-    <ClInclude Include="KRenderManager.h">
-      <Filter>05_Render</Filter>
     </ClInclude>
     <ClInclude Include="KBitMap.h">
       <Filter>00_Resource</Filter>
@@ -200,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="KSoundPlayer.h">
       <Filter>05_Sound\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="KAPIRenderManager.h">
+      <Filter>05_Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

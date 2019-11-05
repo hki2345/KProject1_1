@@ -38,8 +38,11 @@ protected:
 protected:
 	virtual void init();
 	virtual void update();
-	virtual void render();
+	virtual void render_api();
+	virtual void render_dx();
 	virtual void release();
+
+public:
 	virtual int create();
 
 public:
@@ -59,6 +62,7 @@ public:
 	void set_clienttowindow(const KSize2& _Size);
 	void size(const KSize2& _Size);
 	void client_size(const KSize2& _Size);
+	void set_color(const COLORREF& _Value);
 
 	inline KSize2& client_size()
 	{

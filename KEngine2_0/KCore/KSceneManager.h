@@ -28,7 +28,7 @@ private:
 
 	void init();
 	void update();
-	void render();
+	void render_api();
 	void release() override;
 
 public:

@@ -9,7 +9,7 @@
 
 
 class KOne;
-class KRenderManager;
+class KAPIRenderManager;
 class K2DColliderManager;
 class KRenderer;
 class K2DCollider;
@@ -34,7 +34,7 @@ public:
 
 
 protected:
-	KRenderManager* curKRenderMgr;
+	KAPIRenderManager* curAPIKRenderMgr;
 	K2DColliderManager* curK2DColliderMgr;
 
 	std::multimap<std::wstring, KOne*> MapKOne;
@@ -56,7 +56,8 @@ protected:
 	virtual void update() ;
 	virtual void out();
 	virtual void release();
-	virtual void render();
+	virtual void render_api();
+	virtual void render_dx();
 	virtual bool process_packet(char* szBuf, int len) { return true; };
 
 	void render_debug();

@@ -33,7 +33,6 @@ bool BattleCityInitiator::init()
 	srand(GetTickCount64());
 
 	KResourceManager<KBitMap>::instance()->load_forder(L"BattleCity");
-	KResourceManager<KSound>::instance()->load_forder(L"BattleCity");
 	KResourceManager<KBitMap>::instance()->add_font(L"BattleCity\\DungGeunMo.ttf");
 
 
@@ -45,12 +44,6 @@ bool BattleCityInitiator::init()
 	KSceneManager::instance()->create_scene(NewGameScene, L"Game");
 	KSceneManager::instance()->create_scene(NewOutroScene, L"Outro");
 	KSceneManager::instance()->change_scene(L"Intro");
-
-
-	KOne* TOne = NewIntroScene->create_kone(L"asdf");
-	KSoundPlayer* TSound = TOne->add_component<KSoundPlayer>();
-	TSound->set_sound(L"BattleCity\\drumloop.wav");
-	TSound->play();
 
 	return true;
 }

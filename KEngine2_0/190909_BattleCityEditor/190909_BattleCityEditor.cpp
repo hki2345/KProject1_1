@@ -411,7 +411,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		wchar_t Text[64] = L"Current Tile: ";
 		TextOutW(hMainDC, CurOneMap->pos().x - 100, CurOneMap->pos().y + 10, Text, lstrlenW(Text));
 
-		KWindowManager::instance()->update();
+		KWindowManager::instance()->update_api();
 
 		for (int i = 0; i < (int)VectorButtonBitMap.size(); i++)
 		{

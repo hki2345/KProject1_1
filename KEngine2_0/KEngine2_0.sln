@@ -15,6 +15,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "190904_Circus", "190904_Circus\190904_Circus.vcxproj", "{58E05D67-EF58-4D94-8A31-D26B87AE4FEE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB} = {96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB}
+		{5A5DB68C-459F-4A8F-9E80-D7F2FFE2E1F9} = {5A5DB68C-459F-4A8F-9E80-D7F2FFE2E1F9}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "190909_BattleCityEditor", "190909_BattleCityEditor\190909_BattleCityEditor.vcxproj", "{8203429B-CC82-4835-B1DE-E441FC88F6EF}"
@@ -47,6 +48,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KUnityPerformerWindow", "KUnityPerformerWindow\KUnityPerformerWindow.vcxproj", "{1131DE89-07A4-4F81-977C-D545A37D2162}"
 	ProjectSection(ProjectDependencies) = postProject
 		{96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB} = {96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GM_CinemaMaker", "GM_CinemaMaker\GM_CinemaMaker.vcxproj", "{75702544-C490-4CDA-A483-31FD3070AACD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB} = {96019C78-C4AC-4704-9DC9-AEB0D5F7DAAB}
+		{5A5DB68C-459F-4A8F-9E80-D7F2FFE2E1F9} = {5A5DB68C-459F-4A8F-9E80-D7F2FFE2E1F9}
 	EndProjectSection
 EndProject
 Global
@@ -161,6 +168,14 @@ Global
 		{1131DE89-07A4-4F81-977C-D545A37D2162}.Release|x64.Build.0 = Release|x64
 		{1131DE89-07A4-4F81-977C-D545A37D2162}.Release|x86.ActiveCfg = Release|Win32
 		{1131DE89-07A4-4F81-977C-D545A37D2162}.Release|x86.Build.0 = Release|Win32
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Debug|x64.ActiveCfg = Debug|x64
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Debug|x64.Build.0 = Debug|x64
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Debug|x86.ActiveCfg = Debug|Win32
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Debug|x86.Build.0 = Debug|Win32
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Release|x64.ActiveCfg = Release|x64
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Release|x64.Build.0 = Release|x64
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Release|x86.ActiveCfg = Release|Win32
+		{75702544-C490-4CDA-A483-31FD3070AACD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

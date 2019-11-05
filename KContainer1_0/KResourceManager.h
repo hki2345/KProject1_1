@@ -92,7 +92,7 @@ public:
 
 		if (0 == strcmp("class KSound", NewRes->ktypename().c_str())) // -> 클래스명으로 확장자 결정
 		{
-			NewRes->sExtension = L".wav";
+			NewRes->sExtension = L".mp3";
 		}
 		else if (0 == strcmp("class KBitMap", NewRes->ktypename().c_str())) // -> 클래스명으로 확장자 결정
 		{
@@ -151,7 +151,7 @@ public:
 
 		if (0 == strcmp("class KSound", ComTmp)) // -> 클래스명으로 확장자 결정
 		{
-			Extension = L".wav";
+			Extension = L".mp3";
 		}
 		else if (0 == strcmp("class KBitMap", ComTmp)) // -> 클래스명으로 확장자 결정
 		{

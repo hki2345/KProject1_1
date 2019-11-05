@@ -33,14 +33,14 @@ void KSceneManager::update()
 	}
 	CurScene->update();
 }
-void KSceneManager::render()
+void KSceneManager::render_api()
 {
 	if (nullptr == CurScene)
 	{
 		return;
 	}
 
-	CurScene->render();
+	CurScene->render_api();
 }
 
 

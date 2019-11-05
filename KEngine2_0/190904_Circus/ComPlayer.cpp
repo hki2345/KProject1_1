@@ -242,7 +242,7 @@ void ComPlayer::update_jump()
 {
 	pAnimator->change_animation(L"Jump");
 	fJumpTime += KTimeManager::instance()->deltatime();
-	float T = cos(fJumpTime * 2.0f);
+	float T = cosf(fJumpTime * 2.0f);
 
 	kone()->moving_delta({ .0f, (T * fJumpPower) * -1.0f });
 

@@ -15,24 +15,6 @@ bool KWindowManager::init(
 	_In_ LPWSTR    _lpCmdLine,
 	_In_ int       _nCmdShow)
 {
-	FMOD::System* system;
-	FMOD_RESULT       result;
-	unsigned int      version;
-	void* extradriverdata = 0;
-	FMOD::Channel* channel = 0;
-
-
-	result = FMOD::System_Create(&system);
-	result = system->getVersion(&version);
-	result = system->init(32, FMOD_INIT_NORMAL, extradriverdata);
-
-	FMOD::Sound* sound1 = nullptr;
-	result = system->createSound("drumloop.wav", FMOD_DEFAULT, nullptr, &sound1);
-	result = system->playSound(sound1, 0, false, &channel);
-
-
-
-
 	hInst = _hInstance;
 	WCmdLine = _lpCmdLine;
 	iCmdShow = _nCmdShow;
@@ -63,7 +45,7 @@ void KWindowManager::init()
 }
 
 
-void KWindowManager::update()
+void KWindowManager::update_api()
 {
 	std::map<std::wstring, KWindow*>::iterator SIter = MapWindow.begin();
 	std::map<std::wstring, KWindow*>::iterator EIter = MapWindow.end();
@@ -73,7 +55,7 @@ void KWindowManager::update()
 		SIter->second->update();
 
 		// Ãæµ¹ ¾îÂ¼±¸ ;;
-		SIter->second->render();
+		SIter->second->render_api();
 	}
 }
 
@@ -142,6 +124,28 @@ int KWindowManager::create_window(HWND _Name, const KSize2& _Size /*= KSize2::Ze
 
 	return 0;
 }
+
+
+int KWindowManager::create_window(const wchar_t* _Name, KWindow* _Window)
+{
+	MapWindow.insert(std::make_pair(_Name, _Window));
+	return 0;
+}
+
+
+
+KWindow* KWindowManager::window(const wchar_t* _Name)
+{
+	std::map<std::wstring, KWindow*> ::iterator FIter = MapWindow.find(_Name);
+
+	if (MapWindow.end() != FIter)
+	{
+		return FIter->second;
+	}
+
+	return nullptr;
+}
+
 
 KWindow* KWindowManager::window(const int& _Idx /*= 0*/)
 {

@@ -202,10 +202,10 @@ void BattleScene::update()
 	}
 }
 
-void BattleScene::render()
+void BattleScene::render_api()
 {
 	TileManager::instance()->render();
-	KScene::render();
+	KScene::render_api();
 }
 
 void BattleScene::release()

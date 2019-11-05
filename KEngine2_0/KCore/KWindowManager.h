@@ -29,17 +29,19 @@ private:
 
 public:
 	// 에디터용
-	void update();
+	void update_api();
 	void release() override;
 
 public:
 	int create_window(const wchar_t* _Name, const KSize2& _Size = KSize2::Zero);
 	int create_window(HWND _Name, const KSize2& _Size = KSize2::Zero);
+	int create_window(const wchar_t* _Name, KWindow* _Window);
 	
 public:
 	void backcolor(const COLORREF& _Color);
 
 public:
+	KWindow* window(const wchar_t* _Name);
 	KWindow* window(const int& _Idx = 0);
 	inline HINSTANCE& hinstance()
 	{

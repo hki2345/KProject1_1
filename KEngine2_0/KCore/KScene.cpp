@@ -3,7 +3,7 @@
 
 #include "KOne.h"
 #include "KMacro.h"
-#include "KRenderManager.h"
+#include "KAPIRenderManager.h"
 #include "K2DColliderManager.h"
 
 #include <KMacro.h>
@@ -12,16 +12,16 @@
 
 
 
-KScene::KScene() : curKRenderMgr(nullptr), curK2DColliderMgr(nullptr)
+KScene::KScene() : curAPIKRenderMgr(nullptr), curK2DColliderMgr(nullptr)
 {
 }
 
 void KScene::create()
 {
-	if (nullptr == curKRenderMgr)
+	if (nullptr == curAPIKRenderMgr)
 	{
-		curKRenderMgr = new KRenderManager();
-		curKRenderMgr->init();
+		curAPIKRenderMgr = new KAPIRenderManager();
+		curAPIKRenderMgr->init();
 
 		SceneCamPos = KPos2::Zero;
 	}
@@ -101,11 +101,11 @@ void KScene::release()
 	MapKOne.clear();
 
 
-	if (nullptr != curKRenderMgr)
+	if (nullptr != curAPIKRenderMgr)
 	{
-		curKRenderMgr->release();
+		curAPIKRenderMgr->release();
 	}
-	RELEASE_PTR(curKRenderMgr);
+	RELEASE_PTR(curAPIKRenderMgr);
 
 	if (nullptr != curK2DColliderMgr)
 	{
@@ -115,10 +115,22 @@ void KScene::release()
 }
 
 
-void KScene::render() 
+void KScene::render_api() 
 {
-	curKRenderMgr->update_trans(SceneCamPos);
-	curKRenderMgr->render();
+	curAPIKRenderMgr->update_trans(SceneCamPos);
+	curAPIKRenderMgr->render();
+
+#if _DEBUG
+	render_debug();
+#endif
+
+	KDebugManager::instance()->render();
+}
+
+void KScene::render_dx()
+{
+	curAPIKRenderMgr->update_trans(SceneCamPos);
+	curAPIKRenderMgr->render();
 
 #if _DEBUG
 	render_debug();
@@ -227,7 +239,7 @@ bool KScene::delete_kone(KOne* _Other)
 
 bool KScene::insert_krender(KRenderer* _Render, const int& _Key /*= 0*/)
 {
-	return curKRenderMgr->insert_krenderer(_Render, _Key);
+	return curAPIKRenderMgr->insert_krenderer(_Render, _Key);
 }
 
 
@@ -272,7 +284,7 @@ KPos2 KScene::outof_screen(KOne* _Target)
 
 bool KScene::delete_krenderer(KRenderer* _Renderer)
 {
-	curKRenderMgr->delete_renderer(_Renderer);
+	curAPIKRenderMgr->delete_renderer(_Renderer);
 	return true;
 }
 bool KScene::delete_k2dcollider(K2DCollider* _Collider)
@@ -283,5 +295,5 @@ bool KScene::delete_k2dcollider(K2DCollider* _Collider)
 
 void KScene::sort_toz(const int& _Key)
 {
-	curKRenderMgr->sort_toz(_Key);
+	curAPIKRenderMgr->sort_toz(_Key);
 }

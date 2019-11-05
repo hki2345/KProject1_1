@@ -166,7 +166,7 @@
     <ClCompile Include="KOne.cpp" />
     <ClCompile Include="KRectCollision.cpp" />
     <ClCompile Include="KRenderer.cpp" />
-    <ClCompile Include="KRenderManager.cpp" />
+    <ClCompile Include="KAPIRenderManager.cpp" />
     <ClCompile Include="KScene.cpp" />
     <ClCompile Include="KSceneManager.cpp" />
     <ClCompile Include="KSound.cpp" />
@@ -200,7 +200,7 @@
     <ClInclude Include="KOne.h" />
     <ClInclude Include="KRectCollision.h" />
     <ClInclude Include="KRenderer.h" />
-    <ClInclude Include="KRenderManager.h" />
+    <ClInclude Include="KAPIRenderManager.h" />
     <ClInclude Include="KScene.h" />
     <ClInclude Include="KSceneManager.h" />
     <ClInclude Include="KSound.h" />

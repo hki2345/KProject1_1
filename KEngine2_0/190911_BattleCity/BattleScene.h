@@ -41,7 +41,7 @@ public:
 	void create() override;
 	void stage_start();
 	bool init() override;
-	void render() override;
+	void render_api() override;
 	void update() override;
 	void release() override;
 

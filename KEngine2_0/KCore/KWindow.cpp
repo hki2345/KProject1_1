@@ -49,8 +49,6 @@ void KWindow::init()
 	KSceneManager::instance()->kwindow(this);
 	KSceneManager::instance()->create();
 	KSceneManager::instance()->init();
-
-	BackColor = RGB(0, 0, 0);
 }
 
 void KWindow::update()
@@ -69,10 +67,10 @@ void KWindow::update()
 }
 
 
-void KWindow::render()
+void KWindow::render_api()
 {
 	//  API Render
-	KSceneManager::instance()->render();
+	KSceneManager::instance()->render_api();
 	BitBlt(hMainDC, 0, 0, (int)MyClientSize.x, (int)MyClientSize.y, hBackDC, 0, 0, SRCCOPY);
 
 	// °ËÀº»ö »öÄ¥
@@ -82,6 +80,11 @@ void KWindow::render()
 	Rectangle(hBackDC, 0, 0, (int)MyClientSize.x, (int)MyClientSize.y);
 	SelectObject(hBackDC, oldBrush);
 	DeleteObject(myBrush);
+}
+
+void KWindow::render_dx()
+{
+	KSceneManager::instance()->render_api();
 }
 
 void KWindow::release()
@@ -181,6 +184,11 @@ void KWindow::size(const KSize2& _Size)
 void KWindow::client_size(const KSize2& _Size)
 {
 	MyClientSize = _Size;
+}
+
+void KWindow::set_color(const COLORREF& _Value)
+{
+	BackColor = _Value;
 }
 
 void KWindow::set_clienttowindow(const KSize2& _Size)

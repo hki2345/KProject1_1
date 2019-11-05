@@ -109,9 +109,20 @@ void KCore::init(HWND _hWnd, const KSize2& _Size /*= KSize2::Zero*/)
 
 void KCore::loop()
 {
-	while (looping)
+	if (false == dxmode)
 	{
-		progress();
+		while (looping)
+		{
+			progress_api();
+		}
+	}
+
+	else
+	{
+		while (looping)
+		{
+			progress_dx();
+		}
 	}
 
 	release();
@@ -119,10 +130,21 @@ void KCore::loop()
 
 void KCore::loop_updater()
 {
-	while (looping)
+	if (false == dxmode)
 	{
-		progress();
-		pUpdater->update();
+		while (looping)
+		{
+			progress_api();
+			pUpdater->update();
+		}
+	}
+
+	else
+	{
+		while (looping)
+		{
+			progress_dx();
+		}
 	}
 
 	RELEASE_PTR(pUpdater);
@@ -135,9 +157,14 @@ void KCore::loop_updater()
 
 
 
-void KCore::progress()
+void KCore::progress_api()
 {
-	KWindowManager::instance()->update();
+	KWindowManager::instance()->update_api();
+}
+
+void KCore::progress_dx()
+{
+	KWindowManager::instance()->update_api();
 }
 
 void KCore::release()
