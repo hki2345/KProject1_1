@@ -8,6 +8,7 @@ void GMMainWindow::init()
 {
 	KWindow::init();
 
+	KName::sName = L"Main Window";
 	init_player();
 }
 void GMMainWindow::update()
@@ -62,18 +63,22 @@ int GMMainWindow::set_window(
 	MyCmd = _lpCmdLine;
 	MyiCmd = _nCmdShow;
 
-	WndClass.cbClsExtra = 0; // 여분 메모리
-	WndClass.cbWndExtra = 0; // 여분 메모리
-	WndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH); // 맨 뒤를 칠할 색
-	WndClass.hCursor = LoadCursor(NULL, IDC_ARROW); // 커서 모양
-	WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION); // 왼쪽 귀퉁이 아이콘
-	WndClass.hInstance = _hInstance; // 인스턴스
-	WndClass.lpfnWndProc = this->MainProc; // 프로시져 함수 포인터
-	WndClass.lpszClassName = KName::sName.c_str(); // 윈도우 이름
-	WndClass.lpszMenuName = NULL; // 메뉴 있게 할 거냐
-	WndClass.style = CS_HREDRAW | CS_VREDRAW; // 창크기 변할때 그릴거냐
+	WNDCLASS NewWnd = WNDCLASS();
+	WndClass = NewWnd;
+	
+	
+	NewWnd.cbClsExtra = 0; // 여분 메모리
+	NewWnd.cbWndExtra = 0; // 여분 메모리
+	NewWnd.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH); // 맨 뒤를 칠할 색
+	NewWnd.hCursor = LoadCursor(NULL, IDC_ARROW); // 커서 모양
+	NewWnd.hIcon = LoadIcon(NULL, IDI_APPLICATION); // 왼쪽 귀퉁이 아이콘
+	NewWnd.hInstance = _hInstance; // 인스턴스
+	NewWnd.lpfnWndProc = this->MainProc; // 프로시져 함수 포인터
+	NewWnd.lpszClassName = KName::sName.c_str(); // 윈도우 이름
+	NewWnd.lpszMenuName = NULL; // 메뉴 있게 할 거냐
+	NewWnd.style = CS_HREDRAW | CS_VREDRAW; // 창크기 변할때 그릴거냐
 
-	RegisterClass(&WndClass);
+	RegisterClass(&NewWnd);
 
 	MyhWnd = CreateWindow(
 		KName::sName.c_str(),
