@@ -1,0 +1,11 @@
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.exe
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.deps.json
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.runtimeconfig.json
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.runtimeconfig.dev.json
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.dll
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\TestForm.pdb
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.csprojAssemblyReference.cache
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.AssemblyInfoInputs.cache
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.AssemblyInfo.cs
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.dll
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.pdb
