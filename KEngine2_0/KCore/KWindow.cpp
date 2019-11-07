@@ -13,10 +13,11 @@
 #include <KResourceManager.h>
 #include "KBitMap.h"
 
-KSize2 KWindow::MyWinSize = { 800, 600 };
+KSize2 KWindow::MyTmpSize = { 800, 600 };
 
 KWindow::KWindow() :
 	MyClientSize(KSize2::Zero),
+	MyWinSize({ 800, 600 }),
 	Message(MSG()),
 	hMainDC(nullptr),
 	hBackDC(nullptr),
@@ -145,15 +146,15 @@ LRESULT CALLBACK KWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
 	{
 	case WM_CREATE:
 	{
-		MoveWindow(hWnd, 100, 100, (int)MyWinSize.x, (int)MyWinSize.y, TRUE);
+		MoveWindow(hWnd, 100, 100, (int)MyTmpSize.x, (int)MyTmpSize.y, TRUE);
 		break;
 	}
 	case WM_GETMINMAXINFO:
 	{
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.y = (LONG)MyWinSize.y;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.y = (LONG)MyWinSize.y;
+		((MINMAXINFO*)lParam)->ptMaxTrackSize.x = (LONG)MyTmpSize.x;
+		((MINMAXINFO*)lParam)->ptMaxTrackSize.y = (LONG)MyTmpSize.y;
+		((MINMAXINFO*)lParam)->ptMinTrackSize.x = (LONG)MyTmpSize.x;
+		((MINMAXINFO*)lParam)->ptMinTrackSize.y = (LONG)MyTmpSize.y;
 
 		return FALSE;
 	}
@@ -171,10 +172,10 @@ void KWindow::size(const KSize2& _Size)
 {
 	MyWinSize = _Size;
 	RECT rc = { 0,0, (LONG)MyWinSize.x, (LONG)MyWinSize.y};
-	AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, false);
+	AdjustWindowRectEx(&rc, WS_OVERLAPPEDWINDOW, false, 0);
+	MyTmpSize = MyWinSize;
 
-
-	UpdateWindow(MyhWnd);
+	// UpdateWindow(MyhWnd);
 
 	GetClientRect(MyhWnd, &rc);
 
@@ -194,6 +195,7 @@ void KWindow::set_color(const COLORREF& _Value)
 void KWindow::set_clienttowindow(const KSize2& _Size)
 {
 	MyWinSize = _Size + KSize2(16, 39); // KSize2(GetSystemMetrics(SM_CXVSCROLL), GetSystemMetrics(SM_CYVSCROLL));
+	MyTmpSize = MyWinSize;
 	RECT rc = { 0,0, (LONG)MyWinSize.x, (LONG)MyWinSize.y };
 	AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, false);
 

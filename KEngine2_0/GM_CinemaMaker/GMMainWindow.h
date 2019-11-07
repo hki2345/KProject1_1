@@ -11,6 +11,7 @@ public:
 	~GMMainWindow() {};
 
 private:
+	static KVec2 PlayWinSize;
 	GMPlayerWindow* PlayerWnd;
 	KWindow* TransformWnd;
 	KWindow* ShaderWnd;

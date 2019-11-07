@@ -53,15 +53,6 @@ LRESULT CALLBACK GMPlayerWindow::PlayerProc(HWND hWnd, UINT message, WPARAM wPar
 {
 	switch (message)
 	{
-	case WM_GETMINMAXINFO:
-	{
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.y = (LONG)MyWinSize.y;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.y = (LONG)MyWinSize.y;
-	}
-	break;
-
 	case WM_DESTROY:
 	{
 		PostQuitMessage(0);

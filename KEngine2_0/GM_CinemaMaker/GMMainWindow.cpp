@@ -14,6 +14,7 @@ void GMMainWindow::init()
 void GMMainWindow::update()
 {
 	KWindow::update();
+	MyTmpSize = MyWinSize;
 }
 
 void GMMainWindow::init_player()
@@ -21,10 +22,10 @@ void GMMainWindow::init_player()
 	PlayerWnd = new GMPlayerWindow();
 
 	KWindowManager::instance()->create_window(L"Player Window", PlayerWnd);
-	PlayerWnd->size({ 1000, 180 });
 	PlayerWnd->set_color(RGB(122, 122, 122));
 	PlayerWnd->set_window(MyInstance, this);
 	PlayerWnd->show_window();
+	PlayerWnd->size({ 1000, 180 });
 
 	int MaxX = 400;
 	int MaxY = 650;
@@ -112,10 +113,10 @@ LRESULT CALLBACK GMMainWindow::MainProc(HWND hWnd, UINT message, WPARAM wParam, 
 	{
 	case WM_GETMINMAXINFO:
 	{
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMaxTrackSize.y = (LONG)MyWinSize.y;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.x = (LONG)MyWinSize.x;
-		((MINMAXINFO*)lParam)->ptMinTrackSize.y = (LONG)MyWinSize.y;
+		((MINMAXINFO*)lParam)->ptMaxTrackSize.x = (LONG)MyTmpSize.x;
+		((MINMAXINFO*)lParam)->ptMaxTrackSize.y = (LONG)MyTmpSize.y;
+		((MINMAXINFO*)lParam)->ptMinTrackSize.x = (LONG)MyTmpSize.x;
+		((MINMAXINFO*)lParam)->ptMinTrackSize.y = (LONG)MyTmpSize.y;
 	}
 	break;
 

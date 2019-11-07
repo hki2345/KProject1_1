@@ -19,7 +19,8 @@ public:
 
 
 protected:
-	static KVec2 MyWinSize;
+	static KVec2 MyTmpSize;
+	KVec2 MyWinSize;
 	KVec2 MyClientSize;
 	MSG Message;
 	HDC hMainDC;
