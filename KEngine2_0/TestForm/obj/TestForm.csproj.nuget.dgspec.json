@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj": {}
+    "D:\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj": {}
   },
   "projects": {
-    "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj": {
+    "D:\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj",
+        "projectUniqueName": "D:\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj",
         "projectName": "TestForm",
-        "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj",
-        "packagesPath": "C:\\Users\\hki23\\.nuget\\packages\\",
-        "outputPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\obj\\",
+        "projectPath": "D:\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj",
+        "packagesPath": "C:\\Users\\ICT03_13\\.nuget\\packages\\",
+        "outputPath": "D:\\KProject1_1\\KEngine2_0\\TestForm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\hki23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ICT03_13\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
