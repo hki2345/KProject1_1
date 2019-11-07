@@ -16,22 +16,27 @@
 #endif
 
 #include <KResourceManager.h>
-#include <KSoundPlayer.h>
+#include <KSceneManager.h>
 
 namespace KCoreClr {
 
-	template<typename T>
-	public ref class KResourceMgr
+	public ref class Class1
 	{
 		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
+	};
+
+	public ref class KSceneClr
+	{
 	public:
-		KResourceMgr() {};
-		~KResourceMgr() {};
+		KSceneClr() {};
+		~KSceneClr() {};
+		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
+
 
 	public:
-		void load_all(const wchar_t* _Forder)
+		KScene* Create(const std::string _Name)
 		{
-			KResourceManager<T>::instance()->load_forder(_Forder);
+			return KSceneManager::instance()->create_scene((KPathManager::instance()->char_towchar(_Name.c_str()).c_str()));
 		}
 	};
 }

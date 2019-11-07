@@ -7,4 +7,7 @@
     <UpgradeBackupLocation>D:\KProject1_1\KEngine2_0\Backup\</UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.vcxproj" />
+  </ItemGroup>
 </Project>
