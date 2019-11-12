@@ -20,10 +20,22 @@
 
 using namespace System;
 
+#include <iostream>
+
 namespace ClassLibrary1 {
 	public ref class Class1
 	{
 		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
+	public:
+		Class1() {};
+		~Class1() {};
+
+		System::String^ Test(int A, int B)
+		{
+			System::String^ Tmp = gcnew System::String("Test");
+			
+			return Tmp;
+		}
 	};
 
 

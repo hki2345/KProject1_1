@@ -16,27 +16,27 @@
 #endif
 
 #include <KResourceManager.h>
-#include <KSceneManager.h>
+#include <KWindow.h>
 
 namespace KCoreClr {
 
-	public ref class Class1
+	public ref class Class1 
 	{
 		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
 	};
 
-	public ref class KSceneClr
+	public ref class KWin
 	{
 	public:
-		KSceneClr() {};
-		~KSceneClr() {};
+		KWin() {};
+		~KWin() {};
 		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
 
 
 	public:
-		KScene* Create(const std::string _Name)
+		KWindow* Create(const System::String^ _Name)
 		{
-			return KSceneManager::instance()->create_scene((KPathManager::instance()->char_towchar(_Name.c_str()).c_str()));
+			return nullptr;// KSceneManager::instance()->create_scene((KPathManager::instance()->char_towchar(_Name).c_str()));
 		}
 	};
 }

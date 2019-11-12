@@ -2,27 +2,59 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "ClassLibrary1/1.0.0": {
+      "KContainer/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/ClassLibrary1.dll": {}
+          "bin/placeholder/KContainer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ClassLibrary1.dll": {}
+          "bin/placeholder/KContainer.dll": {}
+        }
+      },
+      "KCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/KCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KCore.dll": {}
+        }
+      },
+      "KCoreClr2/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "KContainer": "1.0.0",
+          "KCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/KCoreClr2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KCoreClr2.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ClassLibrary1/1.0.0": {
+    "KContainer/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary1/ClassLibrary1.vcxproj",
-      "msbuildProject": "../ClassLibrary1/ClassLibrary1.vcxproj"
+      "path": "../../KContainer1_0/KContainer.vcxproj",
+      "msbuildProject": "../../KContainer1_0/KContainer.vcxproj"
+    },
+    "KCore/1.0.0": {
+      "type": "project",
+      "path": "../KCore/KCore.vcxproj",
+      "msbuildProject": "../KCore/KCore.vcxproj"
+    },
+    "KCoreClr2/1.0.0": {
+      "type": "project",
+      "path": "../KCoreClr2/KCoreClr2.vcxproj",
+      "msbuildProject": "../KCoreClr2/KCoreClr2.vcxproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "ClassLibrary1 >= 1.0.0"
+      "KCoreClr2 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -58,8 +90,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj": {
-              "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj"
+            "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj": {
+              "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj"
             }
           }
         }

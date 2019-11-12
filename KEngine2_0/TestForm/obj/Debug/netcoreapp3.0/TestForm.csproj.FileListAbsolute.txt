@@ -9,6 +9,6 @@ D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.As
 D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.AssemblyInfo.cs
 D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.dll
 D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.pdb
-D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\ClassLibrary1.dll
-D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\ClassLibrary1.pdb
 D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\obj\Debug\netcoreapp3.0\TestForm.csproj.CopyComplete
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\KCoreClr2.dll
+D:\Class\6.1\KProject1_1\KEngine2_0\TestForm\bin\Debug\netcoreapp3.0\KCoreClr2.pdb

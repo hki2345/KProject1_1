@@ -15,6 +15,8 @@ namespace TestForm
         [STAThread]
         static void Main()
         {
+            KCoreClr.KWin TWin = new KCoreClr.KWin();
+             
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

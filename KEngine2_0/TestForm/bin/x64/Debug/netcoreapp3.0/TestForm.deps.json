@@ -1,0 +1,40 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "TestForm/1.0.0": {
+        "dependencies": {
+          "KCoreClr2": "1.0.0"
+        },
+        "runtime": {
+          "TestForm.dll": {}
+        }
+      },
+      "KCoreClr2/1.0.0": {
+        "dependencies": {
+          "KContainer": "1.0.0",
+          "KCore": "1.0.0"
+        },
+        "runtime": {
+          "KCoreClr2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestForm/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KCoreClr2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

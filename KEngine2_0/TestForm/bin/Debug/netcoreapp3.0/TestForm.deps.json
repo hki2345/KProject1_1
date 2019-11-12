@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v3.0": {
       "TestForm/1.0.0": {
         "dependencies": {
-          "ClassLibrary1": "1.0.0"
+          "KCoreClr2": "1.0.0"
         },
         "runtime": {
           "TestForm.dll": {}
         }
       },
-      "ClassLibrary1/1.0.0": {
+      "KCoreClr2/1.0.0": {
         "runtime": {
-          "ClassLibrary1.dll": {}
+          "KCoreClr2.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ClassLibrary1/1.0.0": {
+    "KCoreClr2/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

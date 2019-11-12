@@ -4,12 +4,46 @@
     "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\TestForm\\TestForm.csproj": {}
   },
   "projects": {
-    "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj": {
+    "D:\\Class\\6.1\\KProject1_1\\KContainer1_0\\KContainer.vcxproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj",
-        "projectName": "ClassLibrary1",
-        "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj"
+        "projectUniqueName": "D:\\Class\\6.1\\KProject1_1\\KContainer1_0\\KContainer.vcxproj",
+        "projectName": "KContainer",
+        "projectPath": "D:\\Class\\6.1\\KProject1_1\\KContainer1_0\\KContainer.vcxproj"
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj",
+        "projectName": "KCoreClr2",
+        "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "D:\\Class\\6.1\\KProject1_1\\KContainer1_0\\KContainer.vcxproj": {
+                "projectPath": "D:\\Class\\6.1\\KProject1_1\\KContainer1_0\\KContainer.vcxproj"
+              },
+              "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCore\\KCore.vcxproj": {
+                "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCore\\KCore.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCore\\KCore.vcxproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCore\\KCore.vcxproj",
+        "projectName": "KCore",
+        "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCore\\KCore.vcxproj"
       },
       "frameworks": {
         "native": {}
@@ -43,8 +77,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj": {
-                "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\ClassLibrary1\\ClassLibrary1.vcxproj"
+              "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj": {
+                "projectPath": "D:\\Class\\6.1\\KProject1_1\\KEngine2_0\\KCoreClr2\\KCoreClr2.vcxproj"
               }
             }
           }

@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using ClassLibrary1;
 namespace TestForm
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
-
             InitializeComponent();
-
-
-            KSceneMgrClr TestScene = new KSceneMgrClr();
-            TestScene.Create();
         }
 
     }
