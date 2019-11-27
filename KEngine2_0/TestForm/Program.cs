@@ -15,8 +15,11 @@ namespace TestForm
         [STAThread]
         static void Main()
         {
+            String Tsrt = "Name";
             KCoreClr.KWin TWin = new KCoreClr.KWin();
-             
+            TWin.Create(Tsrt);
+
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
