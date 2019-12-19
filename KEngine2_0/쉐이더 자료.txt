@@ -3,3 +3,6 @@ http://chulin28ho.egloos.com/category/%EB%82%98%EB%A6%84%EB%8C%80%EB%A1%9C%20%EA
 
 https://ukprog.tistory.com/13
 - 폰트 뜯기
+
+http://blog.naver.com/PostView.nhn?blogId=seilgogo&logNo=220840379062&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
+- 유니티에 DX9 띄우기
