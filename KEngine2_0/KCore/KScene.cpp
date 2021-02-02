@@ -122,9 +122,8 @@ void KScene::render_api()
 
 #if _DEBUG
 	render_debug();
-#endif
-
 	KDebugManager::instance()->render();
+#endif
 }
 
 void KScene::render_dx()
@@ -134,9 +133,8 @@ void KScene::render_dx()
 
 #if _DEBUG
 	render_debug();
-#endif
-
 	KDebugManager::instance()->render();
+#endif
 }
 
 

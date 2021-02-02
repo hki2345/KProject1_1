@@ -39,6 +39,12 @@ bool KBitMap::load()
 
 HDC& KBitMap::kwindow_size(const KSize2& _Size)
 {
+	if (nullptr != MyBitMap)
+	{
+		DeleteObject(MyBitMap);
+		DeleteObject(OldBitmap);
+	}
+
 	MyBitMap = CreateCompatibleBitmap(KWindowManager::instance()->main_hdc(), (int)_Size.x, (int)_Size.y);
 	OldBitmap = (HBITMAP)SelectObject(MyDC, MyBitMap);
 	GetObjectW(MyBitMap, sizeof(BITMAP), &BitMapData);

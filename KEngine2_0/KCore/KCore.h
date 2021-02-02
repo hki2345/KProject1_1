@@ -224,7 +224,7 @@ int core_launch(
 
 #if _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtSetBreakAlloc(277);
+	// _CrtSetBreakAlloc(277);
 	new int;
 #endif // _DEBUG
 

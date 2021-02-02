@@ -179,12 +179,13 @@ void KWindow::size(const KSize2& _Size)
 
 	GetClientRect(MyhWnd, &rc);
 
-	MyClientSize = KSize2(rc.right, rc.bottom);
+	MyClientSize = KSize2((int)rc.right, (int)rc.bottom);
 }
 
 void KWindow::client_size(const KSize2& _Size)
 {
 	MyClientSize = _Size;
+	BackBitMap->kwindow_size(MyClientSize);
 }
 
 void KWindow::set_color(const COLORREF& _Value)

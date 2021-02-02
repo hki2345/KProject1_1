@@ -20,7 +20,7 @@
 
 void GameManager::init()
 {
-	srand(GetTickCount());
+	srand(GetTickCount64());
 
 	KResourceManager<KBitMap>::instance()->init();
 	KResourceManager<KBitMap>::instance()->load_forder(L"Circus");

@@ -172,8 +172,6 @@ void OutroScene::update_wait()
 
 		else
 		{
-			PlayerManager::instance()->iStage += 1;
-
 			if (PlayerManager::instance()->iStage > 3)
 			{
 				PlayerManager::instance()->iStage = 1;
@@ -181,6 +179,7 @@ void OutroScene::update_wait()
 			}
 			else
 			{
+				PlayerManager::instance()->iStage += 1;
 				KSceneManager::instance()->change_scene(L"Game");
 			}
 		}		

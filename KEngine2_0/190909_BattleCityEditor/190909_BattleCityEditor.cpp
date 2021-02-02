@@ -164,7 +164,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	hMainDC = KWindowManager::instance()->main_hdc();
 	hBackDC = KWindowManager::instance()->back_hdc();
 
-	KWindowManager::instance()->window()->client_size({ 600, 600 });
+	KWindowManager::instance()->window()->client_size({ 520, 520 });
 
 
     // 기본 메시지 루프입니다:
