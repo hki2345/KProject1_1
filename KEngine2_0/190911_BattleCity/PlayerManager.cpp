@@ -26,7 +26,6 @@ void PlayerManager::create(KScene* _GameScene)
 
 void PlayerManager::init()
 {
-	iStage = 1;
 	iLife = 3;
 	iScore = 0;
 

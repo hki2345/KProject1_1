@@ -172,7 +172,7 @@ void OutroScene::update_wait()
 
 		else
 		{
-			if (PlayerManager::instance()->iStage > 3)
+			if (PlayerManager::instance()->iStage >= 3)
 			{
 				PlayerManager::instance()->iStage = 1;
 				KSceneManager::instance()->change_scene(L"Intro");
